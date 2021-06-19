@@ -21,26 +21,359 @@
       <div class="slides">
         <section>
           <h1>ВСЯ ВЛАСТЬ БЭКЕНДАМ!</h1>
-          <p>Как вернуть власть на сервер или путь туда и обратно.</p>
+          <p>Как вернуть власть на сервер или путь туда и обратно</p>
         </section>
-        <section>Инженер - звучит гордо!</section>
-        <section data-background-video="video/1.mp4"></section>
         <section>
-          Куда уходит время?
+          <p>Алексей Золотых</p>
+          <p>
+            <a href="https://twitter.com/zolotyh" target="_blank">@zolotyh</a>
+          </p>
+        </section>
+        <section data-background-color="#231f20">
+          <img src="img/logo_white-blue.svg" height="400px" alt="" />
+        </section>
+        <section>
+          <img src="img/holy.svg" height="400px" alt="" />
+        </section>
+        <section>
+          <h1>ВСЯ ВЛАСТЬ БЭКЕНДАМ!</h1>
+          <p>Как вернуть власть на сервер или путь туда и обратно</p>
+        </section>
+        <section>
+          <Blockquote>
+            Слева по борту рай - <br/>
+            Держись, Сизиф, волоки на него свой камень,
+          </Blockquote>
+        </section>
+        <section data-background-video="./video/1.mp4"></section>
+        <section>
+          <h2>1991</h2>
+          <p class="fragment">
+            <a href="http://info.cern.ch/hypertext/WWW/MarkUp/Tags.html" target="_blank"
+              >HTML tags</a
+            >
+          </p>
+        </section>
+        <section>
+          <h2>Главные теги</h2>
+          <pre><code data-trim>
+&lt;a href="http://www.example.com"&gt;link&lt;/a&gt;
+          </code></pre>
+          <pre><code data-trim>
+&lt;form action="index_submit" method="post" accept-charset="utf-8"&gt;
+  &lt;label for="name"&gt;Name&lt;/label&gt;&lt;input type="text" name="name" value="" &gt;
+  &lt;button type="submit"&gt;Send&lt;/button&gt;
+&lt;/form&gt;
+          </code></pre>
+        </section>
+        <section>
+          <h2>От сайтов к приложениям</h2>
           <ul>
-            <li></li>
+            <li class="fragment">PHP 1995</li>
+            <li class="fragment">Django 2003</li>
+            <li class="fragment">Rails 2004</li>
+            <li class="fragment">ZEND 2006</li>
+            <li class="fragment">ASP.NET MVC 2007</li>
+            <li class="fragment">Lavarel 2011</li>
           </ul>
         </section>
-        <section>Почему слишком много JS – плохо</section>
-        <section>Стейт на клиенте плохо</section>
-        <section>Как было раньше</section>
         <section>
+          <p>XHR</p>
+          <p class="fragment">XMLHttpRequest</p>
+          <div class="fragment">
+            <pre><code data-line-numbers="1|3|5|7-13" data-trim>
+let xhr = new XMLHttpRequest();
+
+xhr.open('GET', '/article/xmlhttprequest/example/load');
+
+xhr.send();
+
+xhr.onload = function() {
+  if (xhr.status != 200) {
+    alert(`Error ${xhr.status}: ${xhr.statusText}`);
+  } else {
+    alert(`Success ${xhr.response.length} байт`);
+  }
+};
+          </code></pre>
+          </div>
+        </section>
+        <section>
+          <p>Эра jQuery</p>
+          <pre><code data-trim>
+$("about").click(function(){
+    $( "#result" ).load( "ajax/about.html";
+});
+          </code></pre>
+        </section>
+        <section>
+          проблемы jQuery
+          <div class="fragment">
+            <pre><code data-trim data-line-numbers="1-8|3|6">
+$("button").click(function(){
+    $("#menu")
+      .append('<li><a href="#">New list item</a></li>');
+});
+
+$("li").click(function() {
+    alert(1)
+})
+          </code></pre>
+          </div>
+        </section>
+        <section>
+          <p>Backbone.js</p>
+          <pre><code data-trim data-line-numbers="1-7|2|4|3,6">
+var Bookmark = Backbone.View.extend({
+  template: _.template(...),
+  render: function() {
+    this.$el.html(this.template(this.model.attributes));
+    return this;
+  }
+});
+          </code></pre>
+        </section>
+        <section>
+          <p>AngularJS</p>
+          <pre><code data-trim>
+&lt;input
+  type="text"
+  ng-model="yourName"
+  placeholder="Enter a name here" /&gt;
+
+&lt;h1&gt;Hello {{yourName}}!&lt;/h1&gt;
+          </code></pre>
+        </section>
+        <section>
+          <p>Тот самый стейт</p>
+          <pre><code data-trim data-line-numbers="2-5|3|6">
+...
+todoList.addTodo = function() {
+      todoList.todos.push({text:todoList.todoText, done:false});
+      todoList.todoText = '';
+};
+...
+          </code></pre>
+          <div class="fragment">
+            <pre><code data-trim data-line-numbers="1-3">
+&lt;li ng-repeat="todo in todoList.todos"&gt;
+...
+&lt;/li&gt;
+          </code></pre>
+          </div>
+        </section>
+        <section data-background-video="./video/1.mp4"></section>
+        <section>Как мы пишем похожее на React</section>
+        <section>
+          <pre><code data-trim data-line-numbers="1-12|6,8|5,9">
+import { BrowserRouter as Router } from 'react-router-dom';
+
+ReactDOM.render(
+  &lt;StrictMode&gt;
+    &lt;AuthProvider&gt;
+        &lt;Router&gt;
+              &lt;App /&gt;
+        &lt;/Router&gt;
+    &lt;/AuthProvider&gt;
+  &lt;/StrictMode&gt;,
+  document.getElementById('root'),
+);
+          </code></pre>
+        </section>
+        <section>
+          <pre><code data-trim data-line-numbers="2-6|10,14|11-12">
+...
+this.axiosInstance
+  .interceptors
+  .response.use(function (response) {
+  return response;
+}, this.onReject);
+...
+
+const onReject = (error: AxiosError): Promise<never> => {
+  if (401 === error.response.status) {
+    invalidateAuth();
+    redirectToLogin();
+    return Promise.reject(error);
+  } else {
+    return Promise.reject(error);
+  }
+};
+          </code></pre>
+        </section>
+        <section>
+          <p>
+          Прежде чем увидеть письма придется
+          </p>
           <ul>
-            <li>Iframe</li>
-            <li>Server concatination</li>
+            <li class="fragment">Загрузить тонну JS</li>
+            <li class="fragment">Проверить сессию</li>
+            <li class="fragment">Выполнить роутинг</li>
+            <li class="fragment">Загрузить необходимые данные</li>
+            <li class="fragment">Отрисовать виджет</li>
           </ul>
         </section>
-        <section>Раньше тоже было не очень</section>
+        <section>
+          <p>
+            &mdash; Как же SSR и NextJS?!
+          </p>
+          <p class="fragment">&mdash; Все равное придется грузить тонну JS + гидрация</p>
+        </section>
+        <section>
+          А что если вернуть рендеринг на сервер?
+        </section>
+        <section data-background-image="./img/hotwire.png">
+        </section>
+        <section>
+          <p>Нам потребуется</p>
+          <ul>
+            <li>Ваш любимый фреймворк</li>
+            <li>Stimulus</li>
+            <li>Turbo</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Stimulus</h2>
+          <p>
+          <a href="https://stimulus.hotwire.dev/" target="_blank">stimulus.hotwire.dev</a>
+          </p>
+        </section>
+        <section>
+          <p>
+            Как же все-таки решить проблему jQuery?
+          </p>
+            <pre><code data-trim data-line-numbers="6-8">
+$("button").click(function(){
+    $("#menu")
+      .append('<li><a href="#">New list item</a></li>');
+});
+
+$("li").click(function() {
+    alert(1)
+})
+          </code></pre>
+        </section>
+        <section>
+          <p>Можно вешать события на Document</p>
+          <pre><code data-trim data-noescape data-line-numbers>
+<strike>$("li").click(() => {...})</strike>
+
+$(document).on( "click", "li", () => {...});
+          </code></pre>
+        </section>
+        <section>
+          <p>MutationObserver</p>
+          <div class="fragment">
+          <pre><code data-trim data-line-numbers="1-14|1|4-6|9-13">
+&lt;div contentEditable id="elem"&gt;Change &lt;b&gt;me&lt;/b&gt;&lt;/div&gt;
+
+&lt;script&gt;
+let observer = new MutationObserver(mutationRecords =&gt; {
+  console.log(mutationRecords); // console.log(изменения)
+});
+
+
+observer.observe(elem, {
+  childList: true
+  subtree: true,
+  characterDataOldValue: true
+});
+&lt;/script&gt;
+          </code></pre>
+          </div>
+        </section>
+        <section>
+          <img src="img/support.png" alt=""/>
+        </section>
+        <section>
+          <pre><code data-trim data-line-numbers>
+<div data-controller="hello">
+  <input data-hello-target="name" type="text">
+  <button data-action="click->hello#greet">Greet</button>
+</div>
+          </code></pre>
+
+          <div class="fragment">
+          <pre><code data-trim data-line-numbers>
+// src/controllers/hello_controller.js
+import { Controller } from "stimulus"
+
+export default class extends Controller {
+  static targets = [ "name" ]
+
+  greet() {
+    const element = this.nameTarget
+    const name = element.value
+    console.log(`Hello, ${name}!`)
+  }
+}
+          </code></pre>
+          </div>
+        </section>
+        <section>
+          <h2>Turbo</h2>
+          <p>
+          <a href="https://turbo.hotwire.dev/" target="_blank">turbo.hotwire.dev</a>
+          </p>
+
+        </section>
+        <section>
+          <p>Новый вид iFrame</p>
+        </section>
+        <section>
+          <p>После отправки формы данный фрейм замениться на HTML, который пришлет сервер</p>
+          <pre><code data-trim>
+&lt;turbo-frame id="new_message"&gt;
+  &lt;form action="/messages" method="post"&gt;
+    ...
+  &lt;/form&gt;
+&lt;/turbo-frame&gt;
+          </code></pre>
+        </section>
+        <section>
+          <p>Ленивая загрузка</p>
+          <pre><code data-trim data-line-numbers>
+<turbo-frame id="messages" src="/messages">
+  <p>This message will be replaced by the response from /messages.</p>
+</turbo-frame>
+          </code></pre>
+        </section>
+        <section>
+          <p>Обновления</p>
+<pre><code data-trim data-line-numbers>
+<turbo-stream action="append" target="messages">
+  <template>
+    <div id="message_1">My new message!</div>
+  </template>
+</turbo-stream>
+</code></pre>
+        </section>
+        <section>
+          Демо...
+        </section>
+        <section>
+          <p>Недостатки</p>
+          <ul>
+            <li>Маргинальная технология</li>
+            <li>Нестандартный подход</li>
+            <li>Не подходит для особо динамичных интерфейсов</li>
+          </ul>
+        </section>
+        <section>
+          <p>Достоинства</p>
+          <ul>
+            <li>Мало JS</li>
+            <li>Декларативная логика</li>
+            <li>Вся сложность собрана на беке, фронт простой</li>
+            <li>Очень быстрый рендеринг</li>
+          </ul>
+        </section>
+        <section>
+          <p>Спасибо!</p>
+          <p>
+            <a href="https://twitter.com/zolotyh" target="_blank">@zolotyh</a>
+          </p>
+        </section>
       </div>
     </div>
 
