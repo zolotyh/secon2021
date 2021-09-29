@@ -50,7 +50,7 @@ html * {
 .reveal {
   font-family: var(--r-main-font);
   font-size: var(--r-main-font-size);
-  font-weight: normal;
+  font-weight: 300;
   color: var(--r-main-color);
 }
 
@@ -347,7 +347,7 @@ html * {
  * PROGRESS BAR
  *********************************************/
 .reveal .progress {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.9);
   color: var(--r-link-color);
 }
 
